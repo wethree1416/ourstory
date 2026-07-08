@@ -1,10 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For You</title>
+<title>For You ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Georgia,serif;
+background:#fff0f5;
+text-align:center;
+padding:20px;
+}
+
+.box{
+max-width:700px;
+margin:auto;
+}
+
+input{
+padding:12px;
+font-size:18px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px 20px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+margin-top:10px;
+}
+
+#letter,#question,#mainContent{
+display:none;
+}
+
+img{
+width:280px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.envelope{
+font-size:90px;
+cursor:pointer;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{transform:translateY(-10px);}
+}
+</style>
 </head>
+
 <body>
-    <h1>🔐 Password Protected Letter</h1>
-    <p>This is where my letter will be.</p>
+
+<div class="box">
+
+<h1>💌 For You</h1>
+
+<div id="passwordSection">
+<h2>Enter Password</h2>
+
+<input type="password" id="password">
+
+<br><br>
+
+<button onclick="checkPassword()">Open</button>
+</div>
+
+<div id="question">
+
+<h2>Will you spend the rest of your life with me? ❤️</h2>
+
+<button onclick="showEnvelope()">Yes</button>
+
+</div>
+
+<div id="letter">
+
+<div class="envelope" onclick="openLetter()">
+💌
+</div>
+
+<p>Click the envelope</p>
+
+</div>
+
+<div id="mainContent">
+
+<h1>❤️ Our Story ❤️</h1>
+
+<img src="photo.jpg">
+
+<br><br>
+
+<audio controls autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div style="margin-top:30px;text-align:left;white-space:pre-wrap;">
+
+PASTE YOUR POEM HERE
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const correctPassword = "InuMyVinu";
+
+function checkPassword(){
+
+let entered=document.getElementById("password").value;
+
+if(entered===correctPassword){
+
+document.getElementById("passwordSection").style.display="none";
+document.getElementById("question").style.display="block";
+
+}else{
+
+alert("Wrong Password 💘");
+
+}
+}
+
+function showEnvelope(){
+
+document.getElementById("question").style.display="none";
+document.getElementById("letter").style.display="block";
+
+}
+
+function openLetter(){
+
+document.getElementById("letter").style.display="none";
+document.getElementById("mainContent").style.display="block";
+
+}
+</script>
+
 </body>
 </html>
